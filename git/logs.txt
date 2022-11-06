@@ -12,8 +12,11 @@ I also checked and i didn't had git installed in
 windows so i went to the official git page and
 download it.
 
-Then when i was able to use git in the terminal
-i went to:
+The problem was that the usual push button
+wasn't visible in atom's GUI.
+
+After installing git i was able to use git in the terminal
+so i went to:
 
 c:\Users\mauro\github\notes
 
@@ -23,3 +26,6 @@ error: remote origin already exists.
 
 git branch -M main
 git push -u origin main
+
+That solve the problem.
+Now after a commit i can push to remote with usual.
