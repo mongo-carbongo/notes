@@ -1,0 +1,72 @@
+Command prompt (Different from Power Shell)
+
+cd # Change to the home directory.
+mkdir "power shell" # Create a directory named "power shell".
+New-Item "C:\SharedFolder" -itemType Directory
+
+cd "power shell" # Change directory to environment
+
+#list folders and subfolders
+dir
+ls #alias of dir
+
+d: #change drives
+c: #change drives
+
+#copy from source to destination
+Copy-Item -Path d:\javascript_projects -Destination c:\users\mauro
+
+# delete a file
+del <path/filename>
+
+# force delete files marked as read only
+del /f <path/filename>
+
+#delete all files with the .log extension
+del *.log
+
+#delete all files with the prefix home
+del home**
+
+#delete all files having the word end somewhere in the filename
+del *end**
+
+#erase multiple files
+del file1 file2 file3 file4
+
+#erase an entire folder or directory (only if it is empty)
+rmdir "Documents"
+
+#If has sub-directories
+rmdir /s "Documents"
+
+If you receive a prompt to delete the file, type ‘Y' and press ‘Enter'.
+
+/s removes all directories and files in a particular directory
+in addition to the directory itself.
+
+If you do not want to see the prompt, use the command /q.
+The /q is a quiet mode that does not ask if you can remove a directory tree.
+rmdir /s /q "Documents"
+
+Example 1 with user prompt:
+
+mkdir hello
+cd hello
+mkdir world
+cd ..
+rmdir hello
+
+Confirm
+The item at C:\users\mauro\downloads\hello has children and the Recurse
+parameter was not specified. If you continue, all
+children will be removed with the item. Are you sure you want to continue?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend
+[?] Help (default is "Y"):
+
+Example 2 with no user prompt
+mkdir hello
+cd hello
+mkdir world
+cd ..
+rmdir hello

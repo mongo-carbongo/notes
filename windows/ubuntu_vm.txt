@@ -1,0 +1,23 @@
+Unattended Guest OS Install Setup
+  Credentials for a default user on the guest OS
+    Username: mauro
+    Password: mauro
+
+  Hostname. Host name for the guest. By default, this is the same as the VM
+  name.
+    Hostname: ubuntu
+
+  Domain Name. Domain name for the guest.
+    Domain name: virtualbox.org
+
+Unattended Guest installation resulted in a malfunctioning terminal
+so, installed the VM manually, then installed guest additions via terminal:
+
+sudo apt-get install virtualbox-guest-additions-iso
+
+That didn't fixed the screen problem but fixed the
+malfunctioning terminal, so :
+
+1. click Show Applications icon in the VM
+2. type displays in the search bar to open settings,
+3. over there select screen resolution mine's (1920*1080)

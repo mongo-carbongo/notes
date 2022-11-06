@@ -1,0 +1,150 @@
+Command prompt (Different from Power Shell)
+
+cd # Change to the home directory.
+mkdir environment # Create a directory named environment.
+cd environment/ # Change directory to environment
+
+#list folders and subfolders
+dir /s /b /o:gn
+/s Displays files in specified directory and all subdirectories.
+
+/b Uses bare format (no heading information or summary).
+
+/o List by files in sorted order.
+
+Then in :gn, g sorts by folders and then files, and n puts those
+ files in alphabetical order.
+
+d: #change drives
+c: #change drives
+
+#create empty text file
+type nul > filename.txt
+
+#create a text file with content
+echo type your content here > file.txt
+
+#move file from source to destination
+move <filename> <destination path>
+
+#copy file from source to destination
+copy <filename> <destination path>
+
+#xcopy, stands for extended copy, is a command that can copy multiple
+#files or entire directory trees from one location to another.
+/E – Copy subdirectories, including any empty ones.
+
+/H - Copy files with hidden and system file attributes.
+
+/C - Continue copying even if an error occurs.
+
+/I - If in doubt, always assume the destination is a folder. e.g. when the destination does not exist.
+
+#Example
+D:\source>tree/f
+Folder PATH listing for volume HD
+Volume serial number is F047-EEE7
+D:.
+├───strong
+│   │   another.txt
+│   │   filename.txt
+│   │
+│   └───goku
+│           kakaroto.txt
+│
+└───weak
+        another.txt
+        file.txt
+        filename.txt
+
+D:\source>xcopy strong weak /E/H/C/I
+
+Overwrite D:\source\weak\another.txt (Yes/No/All)? y
+3 File(s) copied
+
+D:\source>tree/f
+Folder PATH listing for volume HD
+Volume serial number is F047-EEE7
+D:.
+├───strong
+│   │   another.txt
+│   │   filename.txt
+│   │
+│   └───goku
+│           kakaroto.txt
+│
+└───weak
+    │   another.txt
+    │   file.txt
+    │   filename.txt
+    │
+    └───goku
+            kakaroto.txt
+
+# delete a file
+del <path/filename>
+
+# force delete files marked as read only
+del /f <path/filename>
+
+#delete all files with the .log extension
+del *.log
+
+#delete all files with the prefix home
+del home**
+
+#delete all files having the word end somewhere in the filename
+del *end**
+
+#erase multiple files
+del file1 file2 file3 file4
+
+#erase an entire folder or directory (only if it is empty)
+rmdir "Documents"
+
+#If has sub-directories
+rmdir /s "Documents"
+
+If you receive a prompt to delete the file, type ‘Y' and press ‘Enter'.
+
+/s removes all directories and files in a particular directory
+in addition to the directory itself.
+
+If you do not want to see the prompt, use the command /q.
+The /q is a quiet mode that does not ask if you can remove a directory tree.
+rmdir /s /q "Documents"
+
+Example 1 with user prompt:
+
+mkdir hello
+cd hello
+mkdir world
+cd ..
+rmdir hello
+
+Confirm
+The item at C:\users\mauro\downloads\hello has children and the Recurse
+parameter was not specified. If you continue, all
+children will be removed with the item. Are you sure you want to continue?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend
+[?] Help (default is "Y"):
+
+Example 2 with no user prompt
+mkdir hello
+cd hello
+mkdir world
+cd ..
+rmdir hello
+
+
+#print working directory
+cd
+
+Example
+D:\>cd
+D:\
+
+D:\>cd books
+
+D:\Books>cd
+D:\Books

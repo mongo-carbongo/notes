@@ -1,0 +1,19 @@
+Check windows virtualization.
+  1. Open Task manager
+  2. Open Performance Tab
+  3. In CPU check for virtualization enabled.
+
+Hide a folder under This PC in the File Explorer left panel
+  1. Hit the Windows Key then type regedit
+  2. Search this route:
+    HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions
+  3. Search this key name:
+    {7d83ee9b-2244-4e70-b1f5-5393042af1e4}
+  4. Under PropertyBag folder hit rigth click under ThisPCPolicy
+  5. Modify/Value Date : type Hide or Show according to your preference
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{0ddd015d-b06c-45d5-8c4c-f59713854639}
+
+Delete Desktop files:
+Real Desktop Location
+  1. C:\Users\Public\PublicDesktop
