@@ -1,0 +1,25 @@
+When working on atom note's i was trying to download the
+remote repo for the Ubuntu VM.
+
+I couldn't fetch nor pull the repo so i checked for
+the remote repo at github.com
+
+There wasn´t any files inside the notes folder so
+i assume that i connected the account on atom but
+didn't upload the local changes.
+
+I also checked and i didn't had git installed in
+windows so i went to the official git page and
+download it.
+
+Then when i was able to use git in the terminal
+i went to:
+
+c:\Users\mauro\github\notes
+
+git remote add origin git@github.com:mongo-carbongo/notes.git
+
+error: remote origin already exists.
+
+git branch -M main
+git push -u origin main
