@@ -1,0 +1,100 @@
+Determine processor architecture on Linux
+To determine your processor architecture, paste in the following command into
+your terminal:
+
+uname -m
+Hit Enter after you have pasted in the command and examine the output.
+
+x86_64
+
+If the output is x86_64 then you are on a 64-bit architecture.
+
+The file you are looking for is exercism-linux-64bit.tgz.
+
+Extract the executable
+
+If you’re using the command line (use the right archive file name for your
+architecture):
+
+tar -xf exercism-linux-64bit.tgz
+
+in my case:
+/mnt/c/users/mauro/Downloads$ tar -xf exercism-3.1.0-linux-x86_64.tar.gz
+
+Moving the Executable to ~/bin
+Once you download and extract the archive, make it available in your $PATH.
+
+First, let’s make sure the directory exists:
+
+mkdir -p ~/bin
+
+Next, let’s move the exercism executable there:
+
+mv exercism ~/bin
+
+In my case:
+mauro@DESKTOP-O876LFR:/mnt/c/users/mauro/Downloads$ mv exercism ~/bin
+
+Make sure everything worked:
+
+~/bin/exercism
+The above should output something like the below:
+
+A command-line interface for the v2 redesign of Exercism.
+
+Download exercises and submit your solutions.
+
+Usage:
+   [command]
+
+
+Adding ~/bin to $PATH in Bash
+Note: If you’re not running Bash try to adjust the below to your shell or
+Talk to a Volunteer.
+
+To have the exercism executable available everywhere on the command line you
+need to make sure ~/bin is in your $PATH.
+
+There is a chance it’s there already; let’s see whether it is:
+
+[[ ":$PATH:" == *":$HOME/bin:"* || ":$PATH:" == *":~/bin:"* ]] && echo "~/bin is in PATH" || echo "~/bin is not in PATH"
+
+If the above prints ~/bin is not in PATH let’s add ~/bin to $PATH and
+reload Bash configuration:
+
+echo 'export PATH=~/bin:$PATH' >> ~/.bash_profile
+source ~/.bash_profile
+To check whether this worked, try to run exercism without providing the path:
+
+exercism
+
+
+Configuring the CLI
+In order to configure the CLI, paste in the following text into your terminal:
+
+exercism configure --token=71b4c927-a9c6-4be6-bba0-e50c8ca3346b
+You can find your token on your settings page.
+
+my token:
+exercism configure --token=71b4c927-a9c6-4be6-bba0-e50c8ca3346b
+After typing in the command, hit the Enter key.
+
+After hitting the Enter key, you should see a notification from the CLI that a
+configuration file has been written.
+
+Important: The token above should be treated like a password and not be shared
+with anyone!
+When asking for help that involves a command, remove your token before sharing
+the command.
+
+
+Important! The source command and the .bash_profile
+changed the behaviour of my terminal,
+It also affected the Vscode debuger settings that i had configured
+so i had to remove the previously added .bash_profile file.
+
+
+Then i checked the terminal and the exercism command worked, i Also
+checked the PATH variable and there was the ~/bin reference.
+
+The debugger works on the exercism i was working on.

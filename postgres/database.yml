@@ -1,0 +1,8 @@
+development:
+  host: localhost
+  encoding: unicode
+  adapter: postgresql
+  database: myapp_development
+  user: postgres
+  password: mauro
+  port: 5432

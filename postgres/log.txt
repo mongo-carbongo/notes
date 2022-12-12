@@ -1,0 +1,5 @@
+Windows Installation:
+Please provide a password for the database superuser (postgres)
+  password: mauro
+PLease select the port number the server should listen to
+  Port 5432

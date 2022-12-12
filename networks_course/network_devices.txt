@@ -1,0 +1,18 @@
+Network:
+A group or system of interconnected nodes that share resources
+
+Client (AKA endpoints, end hosts):
+A device that accesses a service made available by a server
+
+Server:
+Any client can be a server, however, for a device to act as a server,
+it must provide functions or services for other clients.
+
+Switch
+Provides connectivity to hosts within the same LAN (Local area network)
+Has many network ports for end hosts to connect to (usually 24+)
+Do not provides connectivity between LANs/over the internet
+
+Router
+Has fewer network interfaces than switches
+Provides connectivity between LANs 
